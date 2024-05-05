@@ -1,5 +1,6 @@
 import './App.css';
 import Home from './components/Home';
+import Start from './components/pages/Home'
 import Footer from './components/layouts/Footer';
 import Header from './components/layouts/Header';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
@@ -38,6 +39,7 @@ import UpdateOrder from './components/admin/UpdateOrder';
 import UserList from './components/admin/UserList';
 import UpdateUser from './components/admin/UpdateUser';
 import ReviewList from './components/admin/ReviewList';
+import Contact from './components/pages/Contact';
 
 function App() {
   const [stripeApiKey, setStripeApiKey] = useState("")
@@ -58,7 +60,7 @@ function App() {
                 <div className='container container-fluid'>
                   <ToastContainer theme='dark' />
                   <Routes>
-                      <Route path='/' element={<Home/>} />
+                      <Route path='/products' element={<Home/>} />
                       <Route path='/search/:keyword' element={<ProductSearch/>} />
                       <Route path='/product/:id' element={<ProductDetail/>} />
                       <Route path='/login' element={<Login/>} />
@@ -69,6 +71,8 @@ function App() {
                       <Route path='/password/forgot' element={<ForgotPassword/> } />
                       <Route path='/password/reset/:token' element={<ResetPassword/> } />
                       <Route path='/cart' element={<Cart/> } />
+                      <Route path='/contact' element={<Contact/> } />
+                      <Route path='/' element={<Start/> } />
                       <Route path='/shipping' element={<ProtectedRoute><Shipping/></ProtectedRoute> } />
                       <Route path='/order/confirm' element={<ProtectedRoute><ConfirmOrder/></ProtectedRoute> } />
                       <Route path='/order/success' element={<ProtectedRoute><OrderSuccess/></ProtectedRoute> } />

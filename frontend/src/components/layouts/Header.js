@@ -21,7 +21,7 @@ export default function Header () {
         <div className="col-12 col-md-3">
           <div className="navbar-brand">
             <Link to="/">
-              <img width="150px" alt='JVLcart Logo' src="/images/logo.png" />
+              <img width="50px" height="60px" alt='Vadivel-Mandy Logo' src="/images/Logo-nb.png" />
             </Link>
             </div>
         </div>
@@ -52,6 +52,8 @@ export default function Header () {
           :
             <Link to="/login"  className="btn" id="login_btn">Login</Link>
           }
+           <Link to="/products"><span id="cart" className="ml-3">Products</span></Link>
+           <Link to="/contact"><span id="cart" className="ml-3">Contact</span></Link>
           <Link to="/cart"><span id="cart" className="ml-3">Cart</span></Link>
           <span className="ml-1" id="cart_count">{cartItems.length}</span>
         </div>

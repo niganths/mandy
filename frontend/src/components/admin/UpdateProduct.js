@@ -21,18 +21,12 @@ export default function UpdateProduct () {
     const { loading, isProductUpdated, error, product } = useSelector( state => state.productState)
 
     const categories = [
-        'Electronics',
-        'Mobile Phones',
-        'Laptops',
-        'Accessories',
-        'Headphones',
-        'Food',
-        'Books',
-        'Clothes/Shoes',
-        'Beauty/Health',
-        'Sports',
-        'Outdoor',
-        'Home'
+        'Rice',
+       'Oil',
+       'Coconut',
+       'Pulses',
+       'Cotton',
+       'Turmeric'
     ];
 
     const navigate = useNavigate();

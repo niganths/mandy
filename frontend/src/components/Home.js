@@ -6,6 +6,11 @@ import MetaData from "./layouts/MetaData";
 import Product from "./product/Product";
 import  {toast} from 'react-toastify';
 import Pagination from 'react-js-pagination';
+// import img1 from "../assets/delivery-van.svg"
+// import img2 from "../assets/money-back.svg"
+// import img3 from "../assets/service-hours.svg"
+// import Logo from "../assets/home-1.jpeg";
+
 
 export  default function Home(){
     const dispatch = useDispatch();
@@ -29,11 +34,12 @@ export  default function Home(){
 
 
     return (
+
         <Fragment>
             {loading ? <Loader/>:
                 <Fragment>
-                    <MetaData title={'Buy Best Products'} />
-                    <h1 id="products_heading">Latest Products</h1>
+                    <MetaData title={'Vadivel Mandy'} />
+                    <h1 id="products_heading" style={{fontSize:"50px"}}>Latest Products</h1>
                     <section id="products" className="container mt-5">
                         <div className="row">
                             { products && products.map(product => (
@@ -59,5 +65,7 @@ export  default function Home(){
                 </Fragment>
            }
         </Fragment>
+       
+       
     )
 }

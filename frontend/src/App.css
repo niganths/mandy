@@ -619,3 +619,6 @@ ul.CTAs a {
   font-size: 0.8rem;
   color: grey;
 }
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
