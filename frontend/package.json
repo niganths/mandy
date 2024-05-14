@@ -53,7 +53,7 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "https://vadivel-mandy-backend.vercel.app",
+  "proxy": "https://vadivel-mandy-backend.vercel.app/api/v1",
   "devDependencies": {
     "tailwindcss": "^3.4.3"
   }
