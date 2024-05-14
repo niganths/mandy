@@ -1,71 +1,39 @@
-import { Fragment, useEffect, useState } from "react";
+import { Fragment, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getProducts } from "../actions/productActions";
 import Loader from "./layouts/Loader";
 import MetaData from "./layouts/MetaData";
 import Product from "./product/Product";
-import  {toast} from 'react-toastify';
-import Pagination from 'react-js-pagination';
-// import img1 from "../assets/delivery-van.svg"
-// import img2 from "../assets/money-back.svg"
-// import img3 from "../assets/service-hours.svg"
-// import Logo from "../assets/home-1.jpeg";
+import { toast } from 'react-toastify';
 
-
-export  default function Home(){
+export default function Home() {
     const dispatch = useDispatch();
-    const {products, loading, error, productsCount, resPerPage} =    useSelector((state) => state.productsState)
-    const [currentPage, setCurrentPage] = useState(1);
- 
-    const setCurrentPageNo = (pageNo) =>{
+    const { products, loading, error } = useSelector((state) => state.productsState);
 
-        setCurrentPage(pageNo)
-       
-    }
-
-    useEffect(()=>{
-        if(error) {
-            return toast.error(error,{
+    useEffect(() => {
+        if (error) {
+            return toast.error(error, {
                 position: toast.POSITION.BOTTOM_CENTER
             })
         }
-        dispatch(getProducts(null, null, null, null, currentPage)) 
-    }, [error, dispatch, currentPage])
-
+        dispatch(getProducts());
+    }, [error, dispatch]);
 
     return (
-
         <Fragment>
-            {loading ? <Loader/>:
+            {loading ? <Loader /> :
                 <Fragment>
                     <MetaData title={'Vadivel Mandy'} />
-                    <h1 id="products_heading" style={{fontSize:"50px"}}>Latest Products</h1>
+                    <h1 id="products_heading" style={{ fontSize: "50px"}}>Our Products</h1>
                     <section id="products" className="container mt-5">
                         <div className="row">
-                            { products && products.map(product => (
-                                <Product col={3} key={product._id}  product={product}/>
+                            {products && products.map(product => (
+                                <Product col={3} key={product._id} product={product} />
                             ))}
-                        
                         </div>
                     </section>
-                    {productsCount > 0 && productsCount > resPerPage?
-                    <div className="d-flex justify-content-center mt-5">
-                           <Pagination 
-                                activePage={currentPage}
-                                onChange={setCurrentPageNo}
-                                totalItemsCount={productsCount}
-                                itemsCountPerPage={resPerPage}
-                                nextPageText={'Next'}
-                                firstPageText={'First'}
-                                lastPageText={'Last'}
-                                itemClass={'page-item'}
-                                linkClass={'page-link'}
-                           />     
-                    </div> : null }
                 </Fragment>
-           }
+            }
         </Fragment>
-       
-       
     )
 }

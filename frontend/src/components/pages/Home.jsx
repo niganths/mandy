@@ -17,7 +17,7 @@ const Home = () => {
       <div class="w-full md:w-2/3 p-8 md:mt-16">
         <p class="text-5xl text-white mb-4" style={{fontFamily:"'Roboto', sans-serif"}}>Shop everything with Quality</p>
         <p class="text-white mb-10" style={{fontFamily:"'Roboto', sans-serif"}} >Shopping for nutritious grains should leave you feeling satisfied and energized, with savings in your wallet. From a variety of multi-grains, including quinoa, barley, millet, and more, we've got your pantry essentials covered.</p>
-        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mb-10">Shop Now</button>
+        <a href='/products'><button   class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mb-10">Shop Now</button></a>
       </div>
       <div class="hidden md:block md:w-1/3  justify-center items-center">
         <img src={Logo} alt="Placeholder" class="h-full object-cover" />
