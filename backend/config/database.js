@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const connectDatabase = () => {
-    // Disable strictQuery globally for Mongoose
+    
     mongoose.set('strictQuery', false);
 
     mongoose.connect(process.env.DB_LOCAL_URI,{
